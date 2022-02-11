@@ -1,0 +1,30 @@
+<h3>User Data</h3>
+<div *ngIf="user$ | async; let user">
+  <ul>
+    <li>
+      <div>
+        Name: {{ user.displayName }} <br />
+        Email: {{ user.email }} <br />
+        Role:
+        {{ user.role?.toUpperCase() }}
+      </div>
+    </li>
+  </ul>
+  <button mat-raised-button (click)="edit(user)">Edit Profile</button>
+</div>
+
+<h4>All Users</h4>
+<ul *ngIf="users$ | async; let users">
+  <li *ngFor="let user of users">
+    <div>
+      <h5>Display Name:{{ user.displayName }}</h5>
+      <small>Email: {{ user.email }}</small>
+    </div>
+    <span>Role: {{ user.role?.toUpperCase() }}</span>
+    <button (click)="delete(user)">Delete</button>
+  </li>
+</ul>
+
+<button mat-raised-button (click)="create()">New User</button>
+
+<div class="main-content"></div>

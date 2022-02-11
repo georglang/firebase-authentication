@@ -1,0 +1,30 @@
+<mat-toolbar class="toolbar main-header">
+  <mat-toolbar-row>
+    <div class="branding"></div>
+    <span class="menu-spacer"></span>
+    <div id="auth-wrapper">
+      <button
+        mat-icon-button
+        *ngIf="(isAuthenticated$ | async) === false"
+        [routerLink]="['/sign-in']"
+        routerLinkActive="router-link-active"
+      >
+        Login
+      </button>
+
+      <mat-menu #loginMenu="matMenu" id="login-menu">
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+      <button
+        *ngIf="isAuthenticated$ | async"
+        [matMenuTriggerFor]="loginMenu"
+        mat-icon-button
+      >
+        <mat-icon class="user_icon">account_circle</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

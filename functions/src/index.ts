@@ -8,7 +8,7 @@ import { routesConfig } from './users/routes.config';
 admin.initializeApp();
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({ origin: true }));
+app.use(cors());
 routesConfig(app);
 
 export const api = functions.https.onRequest(app);

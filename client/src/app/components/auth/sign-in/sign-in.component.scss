@@ -1,0 +1,42 @@
+mat-card {
+  margin: 10px;
+}
+
+form {
+  margin: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+#login-btn-wrapper {
+  margin-top: 20px;
+}
+
+#redirectToLogin {
+  margin-top: 20px;
+}
+
+#passwordForgotten {
+  text-align: right;
+}
+
+#passwordForgottenLink {
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    color: grey;
+  }
+}
+
+#sign-in-component-wrapper  {
+  margin-top: 40px;
+}
+
+// @media (min-width: map-get($grid-breakpoints, md)) {
+//   #sign-in-form-wrapper {
+//     width: 50%;
+//     margin: auto;
+//   }
+// }
