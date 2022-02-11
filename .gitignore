@@ -109,6 +109,7 @@ yarn-error.log
 testem.log
 /typings
 .angular/*
+/client/.angular
 
 # System files
 .DS_Store
